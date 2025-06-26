@@ -28,9 +28,8 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff5e62;
+  height:50px;
+  width: auto;
 }
 
 .nav-container a {

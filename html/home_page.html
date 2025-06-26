@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AQ Threads - Home</title>
+  
+ <link rel="stylesheet" href="../css/index.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <!-- Hero banner -->
+<!-- Section 1: Video nằm riêng -->
+<section class="hero-video-section">
+  <video autoplay muted loop playsinline id="hero-video">
+    <source src="../images/hero-banner2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<!-- Section 2: Banner ảnh + nội dung -->
+<section class="hero-banner">
+  <img src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Banner" class="hero-image" />
+  <div class="hero-content">
+    <h1>Fresh Look, New Season</h1>
+    <p>Explore our newest arrivals and bestselling pieces.</p>
+    <a href="#products">Shop Now</a>
+  </div>
+</section>
+
+
+  <!-- Featured products -->
+  <section class="products-section" id="products">
+    <div class="product-container">
+     <!-- 🔻 CATEGORY FILTER BAR (ngang) -->
+    <div class="category-bar">
+      <button onclick="filterProducts(event, 'all')" class="active">All</button>
+      <button onclick="filterProducts(event, 'dress')">Dresses</button>
+      <button onclick="filterProducts(event, 'shoes')">Shoes</button>
+      <button onclick="filterProducts(event, 'bag')">Bags</button>
+      <button onclick="filterProducts(event, 'jacket')">Jackets</button>
+      <button onclick="filterProducts(event, 'glass')">Glasses</button>
+    </div>
+  
+  <div class="product-list" id="product-list">
+    <div class="product-card dress">
+      <a href="product.html?product=summer-dress">
+        <img src="https://images.asos-media.com/products/asos-design-linen-fallen-twist-shoulder-wrap-skirt-detail-midi-dress-in-khaki/207838708-1-khaki?$n_320w$&wid=317&fit=constrain" alt="Summer Dress" />
+        <h3>Summer Dress</h3>
+        <p>$29.99</p>
+      </a>
+    </div>
+
+    <div class="product-card jacket">
+      <a href="product.html?product=denim-jacket">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=600&q=80" alt="Denim Jacket" />
+        <h3>Denim Jacket</h3>
+        <p>$49.99</p>
+      </a>
+    </div>
+
+    <div class="product-card shoes">
+      <a href="product.html?product=white-sneakers">
+      <img src="https://images.unsplash.com/photo-1602810317000-0ec9f21a1756?auto=format&fit=crop&w=600&q=80" alt="White Sneakers" />
+      <h3>White Sneakers</h3>
+      <p>$59.99</p>
+      </a>
+    </div>
+
+    <div class="product-card bag">
+      <a href="product.html?product=leather-bag">
+        <img src="https://images.unsplash.com/photo-1600185365521-4cfdb09ed5a7?auto=format&fit=crop&w=600&q=80" alt="Leather Bag" />
+        <h3>Leather Bag</h3>
+        <p>$79.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="product.html?product=red-scarf">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Red Scarf" />
+        <h3>Red Scarf</h3>
+        <p>$19.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="product.html?product=black-hat">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Black Hat" />
+        <h3>Black Hat</h3>
+        <p>$24.99</p>
+      </a>
+    </div>
+
+    <div class="product-card glass">
+      <a href="product.html?product=summer-sunglasses">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Summer Sunglasses" />
+        <h3>Summer Sunglasses</h3>
+        <p>$39.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="product.html?product=floral-dress">
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=600&q=80" alt="Floral Dress" />
+        <h3>Floral Dress</h3>
+        <p>$44.99</p>
+      </a>
+    </div>
+  </div>
+  </div>
+</section>
+
+  <div id="footer-placeholder"></div>
+ 
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

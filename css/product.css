@@ -1,17 +1,14 @@
-body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdfdfd;
-    }
-
-    .product-container {
+.product-container {
       max-width: 1200px;
       margin: 5rem auto;
       display: flex;
       gap: 3rem;
       padding: 1rem;
       flex-wrap: wrap;
+      background-color: #fff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      padding: 2.5rem;
     }
 
     .images {
@@ -23,12 +20,14 @@ body {
       width: 100%;
       border-radius: 10px;
       object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     .thumbnail-list {
       display: flex;
       gap: 1rem;
       margin-top: 1rem;
+      flex-wrap: wrap;
     }
 
     .thumbnail-list img {
@@ -37,102 +36,211 @@ body {
       object-fit: cover;
       border-radius: 5px;
       cursor: pointer;
-      border: 2px solid transparent;
-      transition: 0.3s;
+      border: 2px solid #eee;
+      transition: all 0.3s ease;
     }
 
-    .thumbnail-list img:hover {
+    .thumbnail-list img:hover,
+    .thumbnail-list img.active {
       border-color: #ff5e62;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(255, 94, 98, 0.2);
     }
 
     .details {
       flex: 1;
       min-width: 300px;
+      padding-left: 1.5rem;
     }
 
     .details h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #222;
+      line-height: 1.2;
     }
 
     .details p {
       margin-bottom: 1rem;
       color: #555;
+      line-height: 1.6;
     }
 
     .price {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
       color: #ff5e62;
+      margin-bottom: 1.5rem;
     }
 
     .rating {
       margin: 1rem 0;
       color: gold;
+      font-size: 1.2rem;
     }
 
     select, input[type="number"] {
-      padding: 0.5rem;
+      padding: 0.8rem;
       font-size: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       width: 100%;
-      max-width: 200px;
+      max-width: 250px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      appearance: none;
+      background-color: #fff;
+      cursor: pointer;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    select:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: #ff5e62;
+      box-shadow: 0 0 0 3px rgba(255, 94, 98, 0.2);
     }
 
     .details button {
-      background: #ff5e62;
-      color: white;
-      border: none;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .details button:hover {
-      background: #e64e50;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
     }
 
     .related {
       max-width: 1200px;
-      margin: 3rem auto;
+      margin: 4rem auto;
       padding: 1rem;
     }
 
     .related h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .related-products {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .related-products a {
-      width: 200px;
-      text-decoration: none;
-      color: black;
-    }
-
-    .related-products img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-    }
-
-    .related-products h4 {
-      font-size: 1rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
       text-align: center;
     }
 
+    .related-products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .related-products img {
+      height: 250px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .related-products h4 {
+      font-size: 1.15rem;
+      text-align: center;
+      margin: 1rem 0.5rem 0.5rem;
+    }
+
+    .related-products p {
+        font-size: 1.05rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 992px) {
+        .product-container {
+            flex-direction: column;
+            padding: 2rem;
+            margin: 3rem auto;
+        }
+
+        .details {
+            padding-left: 0;
+            margin-top: 2rem;
+        }
+
+        .details h1 {
+            font-size: 2.2rem;
+        }
+
+        .details button {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .related h2 {
+            font-size: 1.8rem;
+        }
+
+        .related-products {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .related-products img {
+            height: 200px;
+        }
+    }
+
     @media (max-width: 768px) {
-      .product-container {
-        flex-direction: column;
-        padding: 1rem;
-      }
+        .product-container {
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        .details h1 {
+            font-size: 2rem;
+        }
+
+        .price {
+            font-size: 1.6rem;
+        }
+
+        select, input[type="number"] {
+            max-width: 100%;
+        }
+
+        .related {
+            margin: 3rem auto;
+        }
+
+        .related h2 {
+            font-size: 1.6rem;
+        }
+
+        .related-products {
+            grid-template-columns: 1fr;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .related-products img {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-container {
+            padding: 1rem;
+            margin: 1.5rem auto;
+        }
+
+        .images {
+            min-width: unset;
+        }
+
+        .details h1 {
+            font-size: 1.8rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+        }
+
+        .details button {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+        }
+
+        .related h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .related-products {
+            gap: 1rem;
+        }
     }

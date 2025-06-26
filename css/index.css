@@ -1,134 +1,241 @@
+/* Hero Sections */
 .hero-video-section {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-  }
+}
 
-  .hero-video-section video {
+.hero-video-section video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
 
-  /* --- HERO BANNER (Ảnh + nội dung bên dưới video) --- */
-  .hero-banner {
+.hero-banner {
     position: relative;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-  }
+    overflow: hidden;
+}
 
-  .hero-image {
+.hero-image {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(70%);
-  }
+    filter: brightness(60%);
+    transform: scale(1.01);
+}
 
-  .hero-content {
+.hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 15px;
-  }
+    max-width: 800px;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
 
-  .hero-content h1 {
-    font-size: 3.5rem;
+.hero-content h1 {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
+    letter-spacing: 1px;
+}
 
-  .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
-  }
+.hero-content p {
+    font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
 
-  .hero-content a {
+/* Featured Products Section */
+.products-section {
+    padding: 3rem 0;
+    background-color: #f9f9f9;
+}
+
+.product-container { /* This product-container is specific to index.html for product listing */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Category Filter Bar */
+.category-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+}
+
+.category-bar button {
+    padding: 0.8rem 1.8rem;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-bar button.active,
+.category-bar button:hover {
     background-color: #ff5e62;
     color: white;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-  }
-
-  .hero-content a:hover {
-    background-color: #e64e50;
-  }
-
-    /* Giữ nguyên style sản phẩm bạn có */
-    .product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    border-color: #ff5e62;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.2);
 }
 
+/* Product List specific to index page */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.5rem;
+}
+.product-list {
+    justify-items: center;
+}
 .product-card {
-  background-color: #fff;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width:300px;
+    max-width: 350px;
+    width: 100%;
 }
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+.product-card {
+    /* Image height and specific margins for index page product cards */
 }
 
 .product-card img {
-   width: 100%;
-  height: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
+    height: 500px;
+    object-fit: cover;
 }
-.product-card a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-}
-
 
 .product-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0.8rem 1rem 0.2rem;
-  color: #222;
+    font-size: 1.25rem;
 }
 
 .product-card p {
-  font-size: 0.95rem;
-  margin: 0 1rem 1rem;
-  color: #666;
+    font-size: 1.05rem;
 }
 
-    .product-card button {
-      background-color: #ff5e62;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
+
+/* Responsive Adjustments specific to index.css */
+@media (max-width: 992px) {
+    .hero-content {
+        padding: 2.5rem 1.5rem;
     }
 
-    .product-card button:hover {
-      background-color: #e04e52;
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
     }
+
+    .hero-content p {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+
+    .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    .hero-video-section, .hero-banner {
+        height: 70vh;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+        margin-bottom: 2rem;
+    }
+
+    .hero-content a {
+        padding: 1rem 2rem;
+    }
+
+    .product-container {
+        padding: 0 1rem;
+    }
+
+    .category-bar {
+        gap: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .category-bar button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .hero-video-section, .hero-banner {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content a {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    .category-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-bar button {
+        width: 90%;
+        max-width: 250px;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.1rem;
+        margin: 1rem 1.2rem 0.4rem;
+    }
+
+    .product-card p {
+        font-size: 0.95rem;
+        margin: 0 1.2rem 1rem;
+    }
+}
