@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Cart - Fashion Store</title>
+  <link rel="stylesheet" href="../css/cart.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header>
+  <div class="logo">FashionStore</div>
+
+  <nav class="main-nav">
+    <ul id="nav-links"></ul>
+  </nav>
+
+  <div class="user-info" id="user-greeting">
+    <!-- sẽ được cập nhật bằng JS -->
+  </div>
+</header>
+
+
+
+  <section class="cart-section">
+    <h1>My Cart</h1>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Items sẽ được thêm bằng JS -->
+      </tbody>
+    </table>
+    <p id="empty-cart-message">Your cart is empty.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FashionStore. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+.hero-video-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-video-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --- HERO BANNER (Ảnh + nội dung bên dưới video) --- */
+  .hero-banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(70%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  }
+
+  .hero-content a {
+    background-color: #ff5e62;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+
+  .hero-content a:hover {
+    background-color: #e64e50;
+  }
+
+    /* Giữ nguyên style sản phẩm bạn có */
+    .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+.product-card {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width:300px;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+   width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.product-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+
+.product-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8rem 1rem 0.2rem;
+  color: #222;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  margin: 0 1rem 1rem;
+  color: #666;
+}
+
+    .product-card button {
+      background-color: #ff5e62;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #e04e52;
+    }

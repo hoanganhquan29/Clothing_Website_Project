@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - FashionStore</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/product.css">
+  
+</head>
+<body>
+
+  <header>
+  <div class="logo">FashionStore</div>
+
+  <nav class="main-nav">
+    <ul id="nav-links"></ul>
+  </nav>
+
+  <div class="user-info" id="user-greeting">
+    <!-- sẽ được cập nhật bằng JS -->
+  </div>
+</header>
+
+  <div class="product-container">
+    <div class="images">
+      <img id="main-image" class="main-image" src="" alt="Product">
+      <div class="thumbnail-list" id="thumbnails"></div>
+    </div>
+
+    <div class="details">
+      <h1 id="product-name"></h1>
+      <div class="rating" id="rating-stars"></div>
+      <p class="price" id="product-price"></p>
+      <p id="product-description"></p>
+
+      <label for="size">Size</label>
+      <select id="size">
+        <option value="">Select size</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" value="1" min="1" max="10" />
+
+      <button onclick="addProductToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Related Products</h2>
+    <div class="related-products" id="related-container"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FashionStore. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/product.js"></script>
+</body>
+</html>

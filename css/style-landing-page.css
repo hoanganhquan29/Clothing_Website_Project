@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff5e62;
+}
+
+.nav-container a {
+  text-decoration: none;
+  margin-left: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.landing-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 4rem 4rem;
+  background: linear-gradient(to right, #ffe8e8, #fff);
+  min-height: 100vh;
+}
+
+.landing-text {
+  flex: 1;
+  animation: fadeInLeft 1s ease;
+}
+
+.landing-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.landing-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.landing-text a {
+  background-color: #ff5e62;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.landing-text a:hover {
+  background-color: #e64e50;
+}
+
+.landing-image {
+  flex: 1;
+  height: 500px;
+  background: url('https://plus.unsplash.com/premium_photo-1664202526559-e21e9c0fb46a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+  border-radius: 1rem;
+  animation: fadeInRight 1s ease;
+}
+
+section#about {
+  padding: 4rem 2rem;
+  background-color: #fefefe;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+section#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@keyframes fadeInLeft {
+  from {opacity: 0; transform: translateX(-30px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInRight {
+  from {opacity: 0; transform: translateX(30px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 768px) {
+  .landing-hero {
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+  }
+
+  .landing-image {
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+  }
+}

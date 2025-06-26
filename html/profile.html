@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - Fashion Store</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <header>
+    <div class="logo">FashionStore</div>
+
+    <nav class="main-nav">
+      <ul id="nav-links"></ul>
+    </nav>
+
+    <div class="user-info" id="user-greeting"></div>
+  </header>
+
+  <section class="profile-section">
+    <div class="profile-card">
+      <img src="https://i.pravatar.cc/150?img=3" alt="User Avatar" class="avatar" />
+      <h1>Welcome, <span id="username-display"></span>!</h1>
+      <p>This is your personal profile dashboard.</p>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FashionStore. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+/* ======= Reset và nền tảng ======= */
+/* Reset box-sizing để không tạo lề ngoài ý muốn */
+* {
+  box-sizing: border-box;
+}
+
+/* Căn đều toàn bộ layout, tránh bị lề trắng 2 bên */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  overflow-x: hidden; /* ✅ ngăn cuộn ngang gây lệch */
+}
+
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* ✅ canh giữa nav */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+/*=============================Thanh loc san pham============================*/
+.product-section {
+  padding: 4rem 0;
+  background-color: #fefefe;
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* ✅ căn giữa mọi nội dung */
+}
+
+.category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding-top: 1rem;
+}
+
+.category-bar button {
+  background-color: #eee;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600; /* ✅ đậm hơn */
+  font-size: 1.1rem; /* ✅ to hơn */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  
+
+}
+
+.category-bar button:hover {
+  background-color: #ddd;
+  transform: translateY(-2px); /* hiệu ứng nổi nhẹ khi hover */
+}
+
+.category-bar button.active {
+  background-color: #ff5e62;
+  color: white;
+  font-weight: 700; /* ✅ active thì càng đậm hơn nữa */
+}
+
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+#products {
+  scroll-margin-top: 100px; /* ✅ đẩy xuống 1 khoảng khi cuộn */
+}
+
+/* ===== User Info (greeting thay thế) ===== */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ccc;
+  font-size: 0.95rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 160px;
+}
+
+.user-info img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: white;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #ff5e62;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.products {
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+
+.product-card {
+  
+  padding: 1rem;
+  width: 250px;
+ 
+  background-color: #fafafa;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+/*============================================Contact page=======================================*/
+
+
+/*========================Login page=====================*/
+
+/*====================Register page==============================*/
+/* REGISTER PAGE - PHONG CÁCH HIỆN ĐẠI */
+/* REGISTER PAGE - PHONG CÁCH HIỆN ĐẠI */

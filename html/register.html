@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Fashion Store</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/register.css" />
+</head>
+<body>
+
+  <header>
+  <div class="logo">FashionStore</div>
+
+  <nav class="main-nav">
+    <ul id="nav-links"></ul>
+  </nav>
+
+  <div class="user-info" id="user-greeting">
+    <!-- sẽ được cập nhật bằng JS -->
+  </div>
+</header>
+
+
+
+  <section class="form-section">
+  <div class="container">
+    <h1>Create Account</h1>
+    <form class="auth-form" onsubmit="return validateRegister()">
+      <input type="text" id="reg-username" placeholder="Username" required />
+      <input type="email" id="reg-email" placeholder="Email" required />
+      <input type="password" id="reg-password" placeholder="Password" required />
+      <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 FashionStore. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html>
