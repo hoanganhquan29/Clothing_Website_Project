@@ -31,8 +31,8 @@ function updateNavBar() {
 
   if (user) {
     navLinks.innerHTML = `
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#products">Shop</a></li>
+      <li><a href="home_page.html">Home</a></li>
+      <li><a href="home_page.html#products">Shop</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="profile.html">Profile</a></li>
       <li><a href="cart.html">My Cart</a></li>
@@ -48,8 +48,8 @@ function updateNavBar() {
 
   } else {
     navLinks.innerHTML = `
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#products">Shop</a></li>
+      <li><a href="home_page.html">Home</a></li>
+      <li><a href="#products">Shop</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="login.html">Login</a></li>
       <li><a href="register.html">Register</a></li>
@@ -109,4 +109,9 @@ function filterProducts(event, category) {
       card.style.display = 'none';
     }
   });
+}
+function logout() {
+  localStorage.removeItem("loggedInUser"); // Remove user from local storage
+  updateNavBar(); // Update the navigation bar to show logged-out links
+  window.location.href = "index.html"; // Redirect to the home page or login page
 }

@@ -1,36 +1,44 @@
 /* Contact Section */
 .contact-section {
-  padding: 4rem 1rem;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  padding: 6rem 1rem; /* Increased padding for more vertical space, similar to hero sections*/
+  background-color: #f9f9f9; /* Consistent with body background in base.css*/
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* Consistent font family*/
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px)); /* Adjust min-height to push footer down, similar to login.css logic */
+  display: flex; /* Added for centering content */
+  justify-content: center; /* Added for centering content */
+  align-items: center; /* Added for centering content */
 }
 
 .contact-section .container {
-  max-width: 600px;
+  max-width: 650px; /* Slightly increased max-width for content, similar to hero-content in index.css*/
   margin: 0 auto;
   background-color: #fff;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2.5rem; /* Increased padding for more inner space, similar to hero-content in index.css*/
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth, similar to product cards and hero-content*/
   text-align: center;
+  width: 100%; /* Ensure it takes full width within max-width */
 }
 
 .contact-section h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: 2.5rem; /* Larger heading for prominence, closer to hero titles in index.css*/
+  margin-bottom: 1rem; /* More space below heading */
+  color: #222; /* Consistent dark text color */
+  font-weight: 700; /* Bolder font weight, consistent with headings */
+  letter-spacing: 0.5px; /* Slight letter spacing for appeal */
 }
 
 .contact-section p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
+  font-size: 1.1rem; /* Slightly larger font size for better readability, consistent with body text*/
+  color: #555; /* Slightly darker grey for better contrast, consistent with general text */
+  margin-bottom: 2.5rem; /* More space below paragraph*/
+  line-height: 1.6; /* Improved line height for readability*/
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem; /* Slightly increased gap for better spacing between fields */
 }
 
 .contact-form input,
@@ -47,22 +55,81 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #ff5e62;
-  box-shadow: 0 0 0 3px rgba(255, 94, 98, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 94, 98, 0.2); /* Slightly larger and more spread out shadow on focus */
 }
 
 .contact-form button {
-  padding: 1rem;
-  background-color: #ff5e62;
+  /* Inherit styles from the common button style in base.css for consistency*/
+  background-color: #ff5e62; /* Accent color from base.css*/
   color: white;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
+  padding: 1.2rem 2.5rem; /* Adopt padding from base.css buttons*/
+  font-size: 1.05rem; /* Consistent font size*/
+  border-radius: 25px; /* Consistent border-radius for buttons*/
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adopt transitions from base.css*/
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow*/
+  display: inline-block; /* Ensure button behaves like block for full styling */
+  text-decoration: none; /* Remove underline if it becomes a link in future */
 }
 
 .contact-form button:hover {
-  background-color: #e64e50;
-  transform: translateY(-2px);
+  background-color: #e64e50; /* Hover color from base.css*/
+  transform: translateY(-3px); /* Consistent hover effect*/
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Consistent hover shadow*/
+}
+
+/* Responsive adjustments for contact section, mirroring index.css and login.css media queries */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 0.8rem; /* Adjust padding for smaller screens */
+    min-height: 80vh; /* Adjust min-height for smaller screens */
+  }
+
+  .contact-section .container {
+    padding: 2.5rem 1.5rem; /* Reduce container padding */
+    max-width: 90%; /* Allow container to take more width on smaller screens */
+  }
+
+  .contact-section h1 {
+    font-size: 2rem; /* Smaller heading */
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form button {
+    padding: 1rem 2rem; /* Smaller button padding */
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3rem 0.5rem;
+    min-height: 70vh;
+  }
+
+  .contact-section .container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.8rem;
+  }
 }

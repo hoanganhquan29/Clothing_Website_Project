@@ -1,102 +1,158 @@
+/* Cart Section */
 .cart-section {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 2rem;
+  max-width: 950px; /* Slightly increased max-width for better content display */
+  margin: 5rem auto; /* Adjusted top margin for consistency with hero sections and other pages */
+  padding: 3rem; /* Increased padding for more spacious look */
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth, similar to product cards and hero-content */
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* Consistent font family */
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px) - 5rem); /* Adjust min-height to push footer down */
+  display: flex; /* Added for better layout of content within the section */
+  flex-direction: column; /* Organize content vertically */
+  justify-content: center; /* Center content vertically if space allows */
+  align-items: center; /* Center content horizontally */
 }
 
 .cart-section h1 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #222;
+  font-size: 2.8rem; /* Larger heading for prominence, closer to hero titles in index.css */
+  margin-bottom: 2.5rem; /* More space below heading */
+  color: #222; /* Consistent dark text color */
+  font-weight: 700; /* Bolder font weight */
+  letter-spacing: 0.5px; /* Slight letter spacing for appeal */
 }
 
 #cart-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1rem;
+  font-size: 1.05rem; /* Slightly larger font size for better readability */
+  margin-bottom: 2rem; /* Space below table */
+  background-color: #fff; /* Ensure table background is white */
+  border-radius: 12px; /* Slight border-radius for the table itself */
+  overflow: hidden; /* Ensures border-radius is applied correctly */
 }
 
 #cart-table th,
 #cart-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
+  padding: 1.2rem 1rem; /* Increased padding for table cells */
+  border-bottom: 1px solid #f0f0f0; /* Lighter border for a cleaner look */
   text-align: center;
 }
 
 #cart-table th {
-  background-color: #ff5e62;
+  background-color: #ff5e62; /* Accent color from base.css */
   color: white;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.8px; /* Added letter spacing */
 }
 
 #cart-table td {
   color: #444;
+  vertical-align: middle; /* Align content in the middle */
+}
+
+#cart-table tr:last-child td {
+  border-bottom: none; /* No bottom border for the last row */
 }
 
 .remove-btn {
+  /* Inherit common button styles from base.css */
   background-color: #ff5e62;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.8rem 1.5rem; /* Adjusted padding for a smaller button in table */
+  border-radius: 25px; /* Consistent border-radius for buttons */
+  font-size: 0.9rem; /* Smaller font size for table button */
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow for a small button */
 }
 
 .remove-btn:hover {
   background-color: #e64e50;
+  transform: translateY(-2px); /* Consistent hover effect */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
 }
 
 #empty-cart-message {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem; /* More space for the message */
   font-style: italic;
   color: #777;
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Slightly larger font size */
+  padding: 1rem; /* Add some padding around the message */
+  background-color: #f0f0f0; /* Light background for the message */
+  border-radius: 8px; /* Rounded corners for the message box */
+  max-width: 400px; /* Limit width for better readability */
+  width: 100%;
 }
 
-/* Responsive layout */
-@media (max-width: 600px) {
-  #cart-table thead {
-    display: none;
+/* Responsive adjustments, mirroring index.css and login.css media queries */
+@media (max-width: 768px) {
+  .cart-section {
+    margin: 3rem auto;
+    padding: 2rem 1rem;
+    max-width: 95%; /* Allow cart section to take more width on smaller screens */
   }
 
-  #cart-table,
-  #cart-table tbody,
-  #cart-table tr,
+  .cart-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  #cart-table {
+    font-size: 0.95rem;
+  }
+
+  #cart-table th,
   #cart-table td {
-    display: block;
-    width: 100%;
+    padding: 1rem 0.8rem;
   }
 
-  #cart-table tr {
+  .remove-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  #empty-cart-message {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-section {
+    margin: 2rem auto;
+    padding: 1.5rem 0.5rem;
+    box-shadow: none; /* Remove shadow on very small screens for simplicity */
+    border-radius: 0;
+  }
+
+  .cart-section h1 {
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
+  #cart-table {
+    font-size: 0.85rem;
+  }
+
+  #cart-table th,
   #cart-table td {
-    text-align: left;
-    padding: 1rem;
-    border: none;
-    position: relative;
+    padding: 0.8rem 0.5rem;
   }
 
-  #cart-table td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #555;
+  .remove-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  #empty-cart-message {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
   }
 }
-
