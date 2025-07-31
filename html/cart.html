@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Cart - Fashion Store</title>
-  <link rel="stylesheet" href="../css/cart.css" />
-  <link rel="stylesheet" href="../css/base.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart - AQ Threads</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/cart.css"> </head>
 <body>
 
-<div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
 
+    <main class="container cart-page">
+        <h2>My Cart</h2>
 
+        <div class="cart-table-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Product Name</th>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items-body">
+                    </tbody>
+            </table>
+        </div>
 
-  <section class="cart-section">
-    <h1>My Cart</h1>
-    <table id="cart-table">
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Remove</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Items sẽ được thêm bằng JS -->
-      </tbody>
-    </table>
-    <p id="empty-cart-message">Your cart is empty.</p>
-  </section>
+        <div class="cart-summary">
+            <h3>Cart Total: <span id="cart-total">$0.00</span></h3>
+            <button id="checkout-btn" class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </main>
 
-<div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-  <script src="../js/script.js"></script>
-  <script src="../js/cart.js"></script>
-</body>
+    <script src="../js/script.js"></script>
+    <script src="../js/cart.js"></script> </body>
 </html>

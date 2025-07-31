@@ -56,4 +56,117 @@
   transform: translateY(-2px);
 }
 
-/*=========================My cart page=====================*/
+/* chnage password css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 50px; /* Điều chỉnh khoảng cách từ đỉnh nếu cần */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-content form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal-content form button {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content form button:hover {
+    background-color: #0056b3;
+}
+
+/* Kiểu dáng cho phần hiển thị yêu cầu mật khẩu */
+#profile-password-policy {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#profile-password-policy p {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+#profile-password-policy ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#profile-password-policy li {
+    font-size: 0.85em;
+    padding: 3px 0;
+    color: #777;
+}
+
+#profile-password-policy li.valid {
+    color: green;
+    text-decoration: line-through;
+}
+
+#profile-password-policy li.invalid {
+    color: red;
+}

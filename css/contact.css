@@ -1,38 +1,36 @@
-/* Contact Section */
+
 .contact-section {
-  padding: 6rem 1rem; /* Increased padding for more vertical space, similar to hero sections*/
-  background-color: #f9f9f9; /* Consistent with body background in base.css*/
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* Consistent font family*/
-  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px)); /* Adjust min-height to push footer down, similar to login.css logic */
-  display: flex; /* Added for centering content */
-  justify-content: center; /* Added for centering content */
-  align-items: center; /* Added for centering content */
+  padding: 6rem 1rem; 
+  background-color: #f9f9f9; 
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; 
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px)); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 .contact-section .container {
-  max-width: 650px; /* Slightly increased max-width for content, similar to hero-content in index.css*/
+  max-width: 650px; 
   margin: 0 auto;
   background-color: #fff;
-  padding: 3.5rem 2.5rem; /* Increased padding for more inner space, similar to hero-content in index.css*/
+  padding: 3.5rem 2.5rem; 
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth, similar to product cards and hero-content*/
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); 
   text-align: center;
-  width: 100%; /* Ensure it takes full width within max-width */
+  width: 100%; 
 }
-
 .contact-section h1 {
-  font-size: 2.5rem; /* Larger heading for prominence, closer to hero titles in index.css*/
-  margin-bottom: 1rem; /* More space below heading */
-  color: #222; /* Consistent dark text color */
-  font-weight: 700; /* Bolder font weight, consistent with headings */
-  letter-spacing: 0.5px; /* Slight letter spacing for appeal */
+  font-size: 2.5rem; 
+  margin-bottom: 1rem; 
+  color: #222; 
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
 }
-
 .contact-section p {
-  font-size: 1.1rem; /* Slightly larger font size for better readability, consistent with body text*/
-  color: #555; /* Slightly darker grey for better contrast, consistent with general text */
-  margin-bottom: 2.5rem; /* More space below paragraph*/
-  line-height: 1.6; /* Improved line height for readability*/
+  font-size: 1.1rem; 
+  color: #555; 
+  margin-bottom: 2.5rem; 
+  line-height: 1.6; 
 }
 
 .contact-form {
@@ -55,29 +53,28 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #ff5e62;
-  box-shadow: 0 0 0 4px rgba(255, 94, 98, 0.2); /* Slightly larger and more spread out shadow on focus */
+  box-shadow: 0 0 0 4px rgba(255, 94, 98, 0.2); /
 }
 
 .contact-form button {
-  /* Inherit styles from the common button style in base.css for consistency*/
-  background-color: #ff5e62; /* Accent color from base.css*/
+  background-color: #ff5e62; 
   color: white;
   border: none;
-  padding: 1.2rem 2.5rem; /* Adopt padding from base.css buttons*/
-  font-size: 1.05rem; /* Consistent font size*/
-  border-radius: 25px; /* Consistent border-radius for buttons*/
+  padding: 1.2rem 2.5rem; 
+  font-size: 1.05rem; 
+  border-radius: 25px; 
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adopt transitions from base.css*/
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow*/
-  display: inline-block; /* Ensure button behaves like block for full styling */
-  text-decoration: none; /* Remove underline if it becomes a link in future */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  display: inline-block; 
+  text-decoration: none; 
 }
 
 .contact-form button:hover {
-  background-color: #e64e50; /* Hover color from base.css*/
-  transform: translateY(-3px); /* Consistent hover effect*/
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Consistent hover shadow*/
+  background-color: #e64e50; 
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive adjustments for contact section, mirroring index.css and login.css media queries */

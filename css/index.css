@@ -68,7 +68,7 @@
     padding: 0 2rem;
 }
 
-/* Category Filter Bar */
+
 .category-bar {
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +98,6 @@
     box-shadow: 0 4px 10px rgba(255, 94, 98, 0.2);
 }
 
-/* Product List specific to index page */
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -111,9 +110,7 @@
     max-width: 350px;
     width: 100%;
 }
-.product-card {
-    /* Image height and specific margins for index page product cards */
-}
+
 
 .product-card img {
     height: 500px;

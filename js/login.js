@@ -1,17 +1,27 @@
+
 function validateLogin() {
-  const username = document.getElementById("login-username").value.trim();
-  const password = document.getElementById("login-password").value.trim();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
 
-  if (!username || !password) {
-    alert("Please enter both username and password.");
-    return false;
-  }
+    if (username === 'admin' && password === 'admin123') {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('isAdmin', 'true');
+        localStorage.setItem('loggedInUser', username); 
+        alert('Admin login successful!');
+        window.location.href = 'admin_dashboard.html';
+        return false;
+    }
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find(u => u.username === username && u.password === password);
 
-  //Giả lập đăng nhập thành công
-  localStorage.setItem("loggedInUser", username);
-
-  // Chuyển hướng sau khi login
-  window.location.href = "profile.html";
-
-  return false; // ngăn reload trang
+    if (user) {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('loggedInUser', username); 
+        alert('Login successful!');
+        window.location.href = 'home_page.html';
+        return false;
+    } else {
+        alert('Invalid username or password.');
+        return false;
+    }
 }

@@ -1,158 +1,371 @@
-/* Cart Section */
-.cart-section {
-  max-width: 950px; /* Slightly increased max-width for better content display */
-  margin: 5rem auto; /* Adjusted top margin for consistency with hero sections and other pages */
-  padding: 3rem; /* Increased padding for more spacious look */
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth, similar to product cards and hero-content */
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* Consistent font family */
-  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px) - 5rem); /* Adjust min-height to push footer down */
-  display: flex; /* Added for better layout of content within the section */
-  flex-direction: column; /* Organize content vertically */
-  justify-content: center; /* Center content vertically if space allows */
-  align-items: center; /* Center content horizontally */
+
+.container.cart-page {
+    max-width: 1200px; 
+    margin: 3rem auto; 
+    padding: 2rem; 
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px) - 3rem); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
-.cart-section h1 {
-  text-align: center;
-  font-size: 2.8rem; /* Larger heading for prominence, closer to hero titles in index.css */
-  margin-bottom: 2.5rem; /* More space below heading */
-  color: #222; /* Consistent dark text color */
-  font-weight: 700; /* Bolder font weight */
-  letter-spacing: 0.5px; /* Slight letter spacing for appeal */
+.cart-page h2 { 
+    text-align: center;
+    font-size: 2.5rem; 
+    margin-bottom: 2rem; 
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-#cart-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.05rem; /* Slightly larger font size for better readability */
-  margin-bottom: 2rem; /* Space below table */
-  background-color: #fff; /* Ensure table background is white */
-  border-radius: 12px; /* Slight border-radius for the table itself */
-  overflow: hidden; /* Ensures border-radius is applied correctly */
+
+.cart-table-container {
+    width: 100%;
+    overflow-x: auto; 
+    margin-bottom: 2rem;
 }
 
-#cart-table th,
-#cart-table td {
-  padding: 1.2rem 1rem; /* Increased padding for table cells */
-  border-bottom: 1px solid #f0f0f0; /* Lighter border for a cleaner look */
-  text-align: center;
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 8px; 
+    overflow: hidden; 
+    min-width: 600px; 
 }
 
-#cart-table th {
-  background-color: #ff5e62; /* Accent color from base.css */
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px; /* Added letter spacing */
+.cart-table thead th {
+    background-color: #ff5e62;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 1rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e64e50; /* Slightly darker border for header */
 }
 
-#cart-table td {
-  color: #444;
-  vertical-align: middle; /* Align content in the middle */
+.cart-table thead th:first-child {
+    border-top-left-radius: 8px; /* Rounded top-left corner for the first header */
 }
 
-#cart-table tr:last-child td {
-  border-bottom: none; /* No bottom border for the last row */
+.cart-table thead th:last-child {
+    border-top-right-radius: 8px; /* Rounded top-right corner for the last header */
 }
 
+.cart-table tbody td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.cart-table tbody tr:last-child td {
+    border-bottom: none; /* No bottom border for the last row */
+}
+
+/* Product image in cart table */
+.cart-table .cart-product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+
+/* Quantity input in cart table */
+.cart-table .quantity-input {
+    width: 60px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    
+}
+
+/* Hide arrows for Chrome, Safari, Edge */
+.cart-table .quantity-input::-webkit-outer-spin-button,
+.cart-table .quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Remove button in cart table */
 .remove-btn {
-  /* Inherit common button styles from base.css */
-  background-color: #ff5e62;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem; /* Adjusted padding for a smaller button in table */
-  border-radius: 25px; /* Consistent border-radius for buttons */
-  font-size: 0.9rem; /* Smaller font size for table button */
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow for a small button */
+    background-color: #ff5e62;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem; /* Adjusted padding for a smaller button in table */
+    border-radius: 20px; /* Consistent border-radius for buttons */
+    font-size: 0.85rem; /* Smaller font size for table button */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for a small button */
 }
 
 .remove-btn:hover {
-  background-color: #e64e50;
-  transform: translateY(-2px); /* Consistent hover effect */
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+    background-color: #e64e50;
+    transform: translateY(-1px); /* Consistent hover effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Cart Summary Section */
+.cart-summary {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Align summary to the right */
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 1.5rem 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cart-summary h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.cart-summary #cart-total {
+    font-size: 1.6rem;
+    color: #ff5e62;
+    font-weight: 700;
+}
+
+.checkout-button {
+    /* Inherits general button styles from base.css */
+    padding: 1rem 2.2rem;
+    font-size: 1rem;
+    border-radius: 25px;
 }
 
 #empty-cart-message {
-  text-align: center;
-  margin-top: 3rem; /* More space for the message */
-  font-style: italic;
-  color: #777;
-  font-size: 1.1rem; /* Slightly larger font size */
-  padding: 1rem; /* Add some padding around the message */
-  background-color: #f0f0f0; /* Light background for the message */
-  border-radius: 8px; /* Rounded corners for the message box */
-  max-width: 400px; /* Limit width for better readability */
-  width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+    font-style: italic;
+    color: #777;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Responsive adjustments, mirroring index.css and login.css media queries */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .cart-section {
-    margin: 3rem auto;
-    padding: 2rem 1rem;
-    max-width: 95%; /* Allow cart section to take more width on smaller screens */
-  }
+    .container.cart-page {
+        margin: 2rem auto;
+        padding: 1.5rem;
+        max-width: 95%;
+    }
 
-  .cart-section h1 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-  }
+    .cart-page h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
 
-  #cart-table {
-    font-size: 0.95rem;
-  }
+    .cart-table {
+        border-radius: 0; /* Remove overall table border-radius for card view */
+        overflow: visible; /* Allow individual cards to cast shadows */
+        min-width: unset; /* Allow table to shrink, no forced horizontal scroll from min-width */
+    }
 
-  #cart-table th,
-  #cart-table td {
-    padding: 1rem 0.8rem;
-  }
+    .cart-table thead {
+        display: none; /* Hide table headers on small screens */
+    }
 
-  .remove-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.85rem;
-  }
+    .cart-table tbody {
+        display: flex; /* Use flexbox for the tbody to stack rows */
+        flex-direction: column; /* Stack items vertically */
+        gap: 1.2rem; /* Space between product cards */
+    }
 
-  #empty-cart-message {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
+    .cart-table tr {
+        display: flex; /* Each row becomes a flex container (a "card") */
+        flex-wrap: wrap; /* Allow items within the card to wrap */
+        border: 1px solid #f0f0f0;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Consistent card shadow */
+        padding: 1rem; /* Padding inside the card */
+        align-items: flex-start; /* Align items to the start (top) of the flex item */
+        justify-content: space-between; /* Distribute items horizontally */
+        width: 100%; /* Ensure card takes full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+        background-color: #fff; /* Ensure card background is white */
+    }
+
+    .cart-table td {
+        display: flex; /* Each td itself becomes a flex container */
+        flex-direction: column; /* Stack label and value vertically */
+        width: auto; /* Allow td to take natural width */
+        text-align: left; /* Align text left within its flex item */
+        padding: 0.5rem 0; /* Adjust vertical padding */
+        border-bottom: none; /* Remove individual td borders */
+        position: static; /* Ensure no unintended positioning */
+        padding-left: 0; /* Remove forced padding-left */
+        flex-basis: 100%; /* Default to full width for all items on mobile */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    /* Styles for the data-label (header for each data point) */
+    .cart-table td::before {
+        content: attr(data-label) ": "; /* Add colon for clarity */
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 0.2rem; /* Small space between label and value */
+        text-align: left; /* Align label to the left */
+        flex-shrink: 0; /* Prevent label from shrinking */
+    }
+
+    /* Specific adjustments for product image */
+    .cart-table td:first-child { /* Targets the product image column */
+        flex-direction: row; /* Make image and product name side-by-side */
+        align-items: center; /* Vertically align image and name */
+        gap: 1rem; /* Space between image and product name */
+        flex-basis: 100%; /* Image and name take full width */
+        margin-bottom: 0.8rem; /* Space below this row */
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid #eee; /* Separator below product image/name */
+    }
+
+    .cart-table .cart-product-img {
+        width: 80px; /* Keep image size consistent */
+        height: 80px;
+        flex-shrink: 0; /* Prevent image from shrinking */
+        margin: 0; /* Remove previous margins */
+        order: -1; /* Place image first in this flex item */
+    }
+
+    .cart-table td[data-label="Product Name"]::before {
+        display: none; /* Hide 'Product Name' label as it's implied by position */
+    }
+    .cart-table td[data-label="Product Name"] {
+        font-weight: bold;
+        font-size: 1.1em;
+        text-align: left; /* Keep product name left-aligned */
+        padding: 0; /* Remove padding for better alignment with image */
+    }
+
+
+    /* Specific adjustments for quantity and action (remove button) */
+    .cart-table td[data-label="Quantity"] {
+        flex-direction: row; /* Arrange label and input side-by-side */
+        justify-content: space-between; /* Space out label and input */
+        align-items: center; /* Vertically align them */
+    }
+
+    .cart-table td[data-label="Action"] {
+        align-items: center; /* Center the remove button within its flex item */
+        margin-top: 1rem; /* Add space above remove button */
+    }
+
+    .cart-table .quantity-input {
+        width: 80px; /* Make quantity input wider */
+    }
+
+    .remove-btn {
+        width: 100%; /* Make remove button full width */
+        max-width: 180px; /* Limit max width for better appearance */
+        margin: 0 auto; /* Center button */
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        align-items: flex-end; /* Align to right */
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .cart-summary h3, .cart-summary #cart-total {
+        font-size: 1.3rem;
+    }
+
+    .checkout-button {
+        width: 100%; /* Full width button */
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    #empty-cart-message {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .cart-section {
-    margin: 2rem auto;
-    padding: 1.5rem 0.5rem;
-    box-shadow: none; /* Remove shadow on very small screens for simplicity */
-    border-radius: 0;
-  }
+    .container.cart-page {
+        padding: 1rem;
+        box-shadow: none;
+        border-radius: 0;
+    }
 
-  .cart-section h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
+    .cart-page h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
 
-  #cart-table {
-    font-size: 0.85rem;
-  }
+    .cart-table tr {
+        padding: 0.8rem; /* Slightly less padding for very small cards */
+    }
 
-  #cart-table th,
-  #cart-table td {
-    padding: 0.8rem 0.5rem;
-  }
+    .cart-table td {
+        padding: 0.3rem 0; /* Reduce vertical padding */
+    }
 
-  .remove-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
+    .cart-table td:first-child { /* Product image/name row */
+        flex-direction: column; /* Stack image and product name vertically */
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 
-  #empty-cart-message {
-    font-size: 0.9rem;
-    margin-top: 1.5rem;
-    padding: 0.8rem;
-  }
+    .cart-table .cart-product-img {
+        width: 70px; /* Smaller image */
+        height: 70px;
+        margin-bottom: 0.5rem; /* Space below image when stacked */
+    }
+
+    .cart-table td[data-label="Product Name"] {
+        text-align: center; /* Center product name when stacked */
+    }
+
+    .cart-table td[data-label="Quantity"] {
+        flex-direction: column; /* Stack quantity label and input vertically */
+        align-items: center; /* Center quantity input */
+    }
+    .cart-table td[data-label="Quantity"]::before {
+        text-align: center; /* Center quantity label */
+    }
+
+
+    .cart-summary h3, .cart-summary #cart-total {
+        font-size: 1.2rem;
+    }
+
+    .checkout-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    #empty-cart-message {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        padding: 0.8rem;
+    }
 }

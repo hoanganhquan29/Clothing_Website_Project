@@ -18,7 +18,17 @@
     <form class="auth-form" onsubmit="return validateRegister()">
       <input type="text" id="reg-username" placeholder="Username" required />
       <input type="email" id="reg-email" placeholder="Email" required />
-      <input type="password" id="reg-password" placeholder="Password" required />
+      <input type="password" id="reg-password" placeholder="Password" required onkeyup="checkPasswordPolicy()"/>
+      <div id="password-policy" style="margin-top: 10px; text-align: left; color: #555;">
+        <p>Password must meet the following requirements:</p>
+        <ul>
+          <li id="policy-length" class="invalid">At least 8 characters</li>
+          <li id="policy-uppercase" class="invalid">At least one uppercase letter</li>
+          <li id="policy-lowercase" class="invalid">At least one lowercase letter</li>
+          <li id="policy-number" class="invalid">At least one number</li>
+          <li id="policy-special" class="invalid">At least one special character (!@#$%^&*)</li>
+        </ul>
+      </div>
       <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required />
       <button type="submit">Register</button>
     </form>

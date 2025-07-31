@@ -9,5 +9,5 @@ function submitContactForm() {
   }
 
   alert("Thank you for your message, " + name + "! We’ll get back to you soon.");
-  return false; // Ngăn gửi form thực tế để giữ trang ở lại
+  return false; 
 }

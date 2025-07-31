@@ -1,168 +1,382 @@
-const products = {
-      "summer-dress": {
-        name: "Summer Dress",
-        price: 29.99,
-        description: "Lightweight and breezy summer dress for hot days.",
-        rating: 4,
-        images: [
-          "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80",
-          "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80"
-        ],
-        related: ["denim-jacket", "white-sneakers"]
-      },
-      "denim-jacket": {
-        name: "Denim Jacket",
-        price: 49.99,
-        description: "Classic blue denim jacket with modern fit.",
-        rating: 5,
-        images: [
-          "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=600&q=80",
-          "https://images.unsplash.com/photo-1495121605193-b116b5b09c70?auto=format&fit=crop&w=600&q=80"
-        ],
-        related: ["summer-dress", "white-sneakers"]
-      },
-   
-      "leather-bag": {
-  name: "Leather Bag",
-  price: 79.99,
-  description: "Premium leather handbag with adjustable strap.",
-  rating: 5,
-  images: [
-    "https://images.unsplash.com/photo-1600185365521-4cfdb09ed5a7?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1601260450462-84cc21f437e6?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["summer-dress", "white-sneakers"]
-},
-"red-scarf": {
-  name: "Red Scarf",
-  price: 19.99,
-  description: "Soft and warm red scarf made from premium wool.",
-  rating: 4,
-  images: [
-    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1512460461124-4237c9e62c13?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["summer-dress", "leather-bag"]
-},
-"leather-bag": {
-  name: "Leather Bag",
-  price: 79.99,
-  description: "Premium leather handbag with adjustable strap.",
-  rating: 5,
-  images: [
-    "https://images.unsplash.com/photo-1600185365521-4cfdb09ed5a7?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1601260450462-84cc21f437e6?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["denim-jacket", "white-sneakers"]
-},
-"black-hat": {
-  name: "Black Hat",
-  price: 24.99,
-  description: "Stylish black hat perfect for any season.",
-  rating: 3,
-  images: [
-    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["red-scarf", "white-sneakers"]
-},
-"summer-sunglasses": {
-  name: "Summer Sunglasses",
-  price: 39.99,
-  description: "Trendy sunglasses with UV protection for summer days.",
-  rating: 4,
-  images: [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1504151932400-72d4384f04b3?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["red-scarf", "black-hat"]
-},
-"floral-dress": {
-  name: "Floral Dress",
-  price: 44.99,
-  description: "Beautiful floral print dress perfect for spring and summer.",
-  rating: 5,
-  images: [
-    "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=600&q=80"
-  ],
-  related: ["summer-dress", "red-scarf"]
-},
-"white-sneakers":{
-  name:"White Sneakers",
-  price:59.99,
-  descreption:"White sneakers are classic, versatile footwear known for their clean, minimalist look. They typically feature a simple design made from materials like leather, canvas, or synthetic fabrics, with white rubber soles. Perfect for casual, sporty, or even semi-formal outfits, white sneakers are popular for their ability to complement a wide range of styles.",
-  rating:4.8,
-  images:[
-    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13721f24-2774-443e-a27d-998d2c6be068/AIR+FORCE+1+%2707+FLYEASE.png",
-    "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/192e92e5-474f-4092-902b-70ec0d0e379f/AIR+FORCE+1+%2707+FLYEASE.png"
-  ],
-  related:["black-hat","denim-jacket"]
-},
 
-
-      
-    };
-
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("product");
-    const product = products[id];
-
-    if (!product) {
-      document.body.innerHTML = "<h2 style='text-align:center'>Product not found</h2>";
-      throw new Error("Invalid product");
+document.addEventListener('DOMContentLoaded', () => {
+ 
+    if (typeof loadHeaderFooter === 'function') {
+        loadHeaderFooter();
+    } else {
+        console.warn('loadHeaderFooter function not found. Header/footer placeholders might not be loaded.');
     }
-
-    // Render product details
-    document.getElementById("product-name").textContent = product.name;
-    document.getElementById("product-price").textContent = `$${product.price.toFixed(2)}`;
-    document.getElementById("product-description").textContent = product.description;
-    document.getElementById("main-image").src = product.images[0];
-
-    // Rating stars
-    document.getElementById("rating-stars").innerHTML = "★".repeat(product.rating) + "☆".repeat(5 - product.rating);
-
-    // Thumbnails
-    const thumbnails = document.getElementById("thumbnails");
-    product.images.forEach((img, idx) => {
-      const thumb = document.createElement("img");
-      thumb.src = img;
-      thumb.onclick = () => {
-        document.getElementById("main-image").src = img;
-      };
-      thumbnails.appendChild(thumb);
-    });
-
-    // Related Products
-    const relatedDiv = document.getElementById("related-container");
-    product.related.forEach(relId => {
-      const rel = products[relId];
-      const a = document.createElement("a");
-      a.href = `product.html?product=${relId}`;
-      a.innerHTML = `
-        <img src="${rel.images[0]}" alt="${rel.name}">
-        <h4>${rel.name}</h4>
-      `;
-      relatedDiv.appendChild(a);
-    });
-
-    function addProductToCart() {
-      const size = document.getElementById("size").value;
-      const quantity = parseInt(document.getElementById("quantity").value);
-
-      if (!size) {
-        alert("Please select a size.");
+    loadProductDetails();
+    loadRelatedProducts();
+    const addToCartButton = document.getElementById('add-to-cart-btn');
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', addProductToCart);
+    } else {
+        console.error('Add to Cart button not found.');
+    }
+});
+function getProducts() {
+    const products = localStorage.getItem('products');
+    return products ? JSON.parse(products) : [];
+}
+function loadProductDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('product_id')); 
+    if (isNaN(productId)) {
+        console.error('Product ID not found or invalid in URL. Redirecting to home page.'); 
+        alert('Product not found!'); 
+        window.location.href = 'home_page.html'; 
         return;
-      }
-
-      const cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-      cart.push({
-        id,
-        name: product.name,
-        size,
-        quantity,
-        price: product.price
-      });
-      localStorage.setItem("shoppingCart", JSON.stringify(cart));
-      alert("Product added to cart!");
     }
+    const products = getProducts(); 
+    const product = products.find(p => p.id === productId); 
+
+    if (product) {
+        const mainImage = document.getElementById('main-image'); //
+        const productName = document.getElementById('product-name'); //
+        const productPrice = document.getElementById('product-price'); //
+        const productDescription = document.getElementById('product-description'); //
+        const ratingStarsDiv = document.getElementById('rating-stars'); //
+        const thumbnailsContainer = document.getElementById('thumbnails'); // Lấy container của thumbnails
+
+        // Cập nhật hình ảnh chính
+        if (mainImage) {
+            mainImage.src = product.image; //
+            mainImage.alt = product.name; //
+        } else {
+            console.error('Element with ID "main-image" not found.'); //
+        }
+
+        // Cập nhật thông tin sản phẩm
+        if (productName) productName.textContent = product.name; //
+        if (productPrice) productPrice.textContent = `$${product.price.toFixed(2)}`; //
+        if (productDescription) productDescription.textContent = product.description; //
+
+        // Cập nhật sao đánh giá (ví dụ: hiển thị 4 sao đầy)
+        if (ratingStarsDiv) {
+            ratingStarsDiv.innerHTML = ''; // Xóa các sao hiện có
+            for (let i = 0; i < 5; i++) {
+                const star = document.createElement('i'); //
+                star.className = i < 4 ? 'fas fa-star' : 'far fa-star'; // Giả sử sử dụng FontAwesome
+                ratingStarsDiv.appendChild(star); //
+            }
+        }
+
+        // Cập nhật thumbnails
+        // Cập nhật thumbnails
+        if (thumbnailsContainer) {
+            thumbnailsContainer.innerHTML = ''; // Xóa thumbnails hiện có
+
+            // allImagesForThumbnails giờ chỉ chứa các ảnh từ galleryImages
+            let allImagesForThumbnails = []; 
+            if (product.galleryImages && Array.isArray(product.galleryImages)) {
+                product.galleryImages.forEach(imgUrl => {
+                    // Chỉ thêm ảnh phụ vào danh sách thumbnail
+                    if (imgUrl) { 
+                        allImagesForThumbnails.push(imgUrl);
+                    }
+                });
+            }
+
+            if (allImagesForThumbnails.length > 0) {
+                allImagesForThumbnails.forEach(imgSrc => {
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = imgSrc;
+                    thumbnailImg.alt = product.name + ' thumbnail';
+                    thumbnailImg.classList.add('thumbnail');
+                    thumbnailImg.onclick = () => { mainImage.src = imgSrc; };
+                    thumbnailsContainer.appendChild(thumbnailImg);
+                });
+            } else {
+                // Tùy chọn: hiển thị thông báo nếu không có ảnh phụ
+                // thumbnailsContainer.innerHTML = '<p>No additional images.</p>';
+            }
+        }
+
+    } else {
+        console.error('Product with ID ' + productId + ' not found in localStorage. Redirecting to home page.'); //
+        alert('Product not found!'); //
+        window.location.href = 'home_page.html'; // Chuyển hướng nếu không tìm thấy sản phẩm
+    }
+}
+
+
+function addProductToCart() {
+    const urlParams = new URLSearchParams(window.location.search); 
+    const productId = parseInt(urlParams.get('product_id')); 
+    const sizeSelect = document.getElementById('size'); 
+    const size = sizeSelect ? sizeSelect.value : 'One Size'; 
+    const quantityInput = document.getElementById('quantity'); 
+    const quantity = parseInt(quantityInput ? quantityInput.value : 1); 
+    if (sizeSelect && !size) { 
+        alert('Please select a size before adding to cart.'); 
+        return;
+    }
+    if (isNaN(quantity) || quantity < 1) {
+        alert('Quantity must be a positive number.'); 
+        return;
+    }
+    const products = getProducts(); 
+    const productToAdd = products.find(p => p.id === productId); 
+
+    if (productToAdd) {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]'); 
+        const newItem = {
+            id: productToAdd.id, 
+            name: productToAdd.name, 
+            price: productToAdd.price, 
+            image: productToAdd.image, 
+            size: size, 
+            quantity: quantity 
+        };
+        const existingItemIndex = cart.findIndex(item => item.id === newItem.id && item.size === newItem.size); 
+
+        if (existingItemIndex > -1) {
+     
+            cart[existingItemIndex].quantity += newItem.quantity; 
+        } else {
+
+            cart.push(newItem); //
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart)); //
+        alert('Product added to cart successfully!'); //
+        // Tùy chọn: Chuyển hướng đến trang giỏ hàng hoặc cập nhật biểu tượng giỏ hàng nhỏ
+        // window.location.href = 'cart.html';
+    } else {
+        alert('No product found with the given ID.'); //
+    }
+}
+
+function loadRelatedProducts() {
+    const products = getProducts(); // Lấy tất cả sản phẩm
+    const currentProductId = parseInt(new URLSearchParams(window.location.search).get('product_id')); //
+
+    // Lọc bỏ sản phẩm hiện tại và chọn ngẫu nhiên một vài sản phẩm khác
+    const relatedProducts = products.filter(p => p.id !== currentProductId) //
+                                    .sort(() => 0.5 - Math.random()) // Xáo trộn
+                                    .slice(0, 4); // Lấy tối đa 4 sản phẩm liên quan
+
+    const relatedContainer = document.getElementById('related-container'); //
+    if (!relatedContainer) return; //
+    relatedContainer.innerHTML = ''; //
+
+    if (relatedProducts.length === 0) {
+        relatedContainer.innerHTML = '<p style="text-align: center; color: #888;">No related products found.</p>'; //
+        return;
+    }
+
+    relatedProducts.forEach(product => {
+        const productCard = document.createElement('div'); //
+        productCard.classList.add('product-card'); // Giả sử có kiểu product-card
+        productCard.innerHTML = `
+            <a href="product.html?product_id=${product.id}">
+                <img src="${product.image}" alt="${product.name}" />
+                <h3>${product.name}</h3>
+                <p>$${product.price.toFixed(2)}</p>
+            </a>
+        `; //
+        relatedContainer.appendChild(productCard); //
+    });
+}// js/product.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Load header and footer (assuming from script.js)
+    if (typeof loadHeaderFooter === 'function') {
+        loadHeaderFooter();
+    } else {
+        console.warn('loadHeaderFooter function not found. Header/footer placeholders might not be loaded.');
+    }
+    loadProductDetails();
+    loadRelatedProducts();
+
+    // Attach event listener to the "Add to Cart" button
+    const addToCartButton = document.getElementById('add-to-cart-btn');
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', addProductToCart);
+    } else {
+        console.error('Add to Cart button not found.');
+    }
+});
+
+// Assuming getProducts() is defined in script.js or a common utility file
+// If not, you need to add it here, or ensure script.js is loaded before product.js
+function getProducts() {
+    const products = localStorage.getItem('products');
+    return products ? JSON.parse(products) : [];
+}
+
+function loadProductDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('product_id')); // Lấy ID từ URL
+
+    // Kiểm tra xem productId có hợp lệ không
+    if (isNaN(productId)) {
+        console.error('Product ID not found or invalid in URL. Redirecting to home page.'); //
+        alert('Product not found!'); //
+        window.location.href = 'home_page.html'; // Chuyển hướng nếu ID không hợp lệ
+        return;
+    }
+
+    const products = getProducts(); // Lấy tất cả sản phẩm từ localStorage
+    const product = products.find(p => p.id === productId); // Tìm sản phẩm theo ID
+
+    if (product) {
+        const mainImage = document.getElementById('main-image'); //
+        const productName = document.getElementById('product-name'); //
+        const productPrice = document.getElementById('product-price'); //
+        const productDescription = document.getElementById('product-description'); //
+        const ratingStarsDiv = document.getElementById('rating-stars'); //
+        const thumbnailsContainer = document.getElementById('thumbnails'); // Lấy container của thumbnails
+
+        // Cập nhật hình ảnh chính
+        if (mainImage) {
+            mainImage.src = product.image; //
+            mainImage.alt = product.name; //
+        } else {
+            console.error('Element with ID "main-image" not found.'); //
+        }
+
+        // Cập nhật thông tin sản phẩm
+        if (productName) productName.textContent = product.name; //
+        if (productPrice) productPrice.textContent = `$${product.price.toFixed(2)}`; //
+        if (productDescription) productDescription.textContent = product.description; //
+
+        // Cập nhật sao đánh giá (ví dụ: hiển thị 4 sao đầy)
+        if (ratingStarsDiv) {
+            ratingStarsDiv.innerHTML = ''; // Xóa các sao hiện có
+            for (let i = 0; i < 5; i++) {
+                const star = document.createElement('i'); //
+                star.className = i < 4 ? 'fas fa-star' : 'far fa-star'; // Giả sử sử dụng FontAwesome
+                ratingStarsDiv.appendChild(star); //
+            }
+        }
+
+        // Cập nhật thumbnails
+        if (thumbnailsContainer) {
+            thumbnailsContainer.innerHTML = ''; // Xóa thumbnails hiện có
+
+            let allImagesForThumbnails = []; //
+
+            if (product.image) {
+                allImagesForThumbnails.push(product.image); //
+            }
+
+            // Ensure product.galleryImages exists and is an array before attempting to iterate
+            // Đã sửa từ product.images sang product.galleryImages
+            if (product.galleryImages && Array.isArray(product.galleryImages)) {
+                product.galleryImages.forEach(imgUrl => {
+                    if (imgUrl && !allImagesForThumbnails.includes(imgUrl)) {
+                        allImagesForThumbnails.push(imgUrl);
+                    }
+                });
+            }
+
+            if (allImagesForThumbnails.length > 0) {
+                allImagesForThumbnails.forEach(imgSrc => {
+                    const thumbnailImg = document.createElement('img'); //
+                    thumbnailImg.src = imgSrc; //
+                    thumbnailImg.alt = product.name + ' thumbnail'; //
+                    thumbnailImg.classList.add('thumbnail'); //
+                    thumbnailImg.onclick = () => { mainImage.src = imgSrc; }; // Khi nhấp vào thumbnail, cập nhật ảnh chính
+                    thumbnailsContainer.appendChild(thumbnailImg); //
+                });
+            } else {
+                // You can add a placeholder or message if no images are found
+            }
+        }
+
+    } else {
+        console.error('Product with ID ' + productId + ' not found in localStorage. Redirecting to home page.'); //
+        alert('Product not found!'); //
+        window.location.href = 'home_page.html'; // Chuyển hướng nếu không tìm thấy sản phẩm
+    }
+}
+
+// Function to add product to cart (modified)
+function addProductToCart() {
+    const urlParams = new URLSearchParams(window.location.search); //
+    const productId = parseInt(urlParams.get('product_id')); //
+    const sizeSelect = document.getElementById('size'); // Lấy phần tử select size
+    const size = sizeSelect ? sizeSelect.value : 'One Size'; // Lấy giá trị size
+
+    // Lấy phần tử input quantity
+    const quantityInput = document.getElementById('quantity'); //
+    const quantity = parseInt(quantityInput ? quantityInput.value : 1); //
+
+    if (sizeSelect && !size) { // Chỉ kiểm tra nếu phần tử chọn kích thước tồn tại
+        alert('Please select a size before adding to cart.'); //
+        return;
+    }
+
+    if (isNaN(quantity) || quantity < 1) {
+        alert('Quantity must be a positive number.'); //
+        return;
+    }
+
+    const products = getProducts(); //
+    const productToAdd = products.find(p => p.id === productId); //
+
+    if (productToAdd) {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]'); //
+
+        // Tạo một đối tượng item cho giỏ hàng
+        const newItem = {
+            id: productToAdd.id, //
+            name: productToAdd.name, //
+            price: productToAdd.price, //
+            image: productToAdd.image, // Lưu ảnh chính
+            size: size, //
+            quantity: quantity //
+        };
+
+        // Kiểm tra nếu sản phẩm với cùng ID và SIZE đã có trong giỏ hàng
+        const existingItemIndex = cart.findIndex(item => item.id === newItem.id && item.size === newItem.size); //
+
+        if (existingItemIndex > -1) {
+            // Nếu đã có, cập nhật số lượng
+            cart[existingItemIndex].quantity += newItem.quantity; //
+        } else {
+            // Nếu chưa có, thêm mới vào giỏ hàng
+            cart.push(newItem); //
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart)); //
+        alert('Product added to cart successfully!'); //
+        // Tùy chọn: Chuyển hướng đến trang giỏ hàng hoặc cập nhật biểu tượng giỏ hàng nhỏ
+        // window.location.href = 'cart.html';
+    } else {
+        alert('No product found with the given ID.'); //
+    }
+}
+
+function loadRelatedProducts() {
+    const products = getProducts(); // Lấy tất cả sản phẩm
+    const currentProductId = parseInt(new URLSearchParams(window.location.search).get('product_id')); //
+
+    // Lọc bỏ sản phẩm hiện tại và chọn ngẫu nhiên một vài sản phẩm khác
+    const relatedProducts = products.filter(p => p.id !== currentProductId) //
+                                    .sort(() => 0.5 - Math.random()) // Xáo trộn
+                                    .slice(0, 4); // Lấy tối đa 4 sản phẩm liên quan
+
+    const relatedContainer = document.getElementById('related-container'); //
+    if (!relatedContainer) return; //
+    relatedContainer.innerHTML = ''; //
+
+    if (relatedProducts.length === 0) {
+        relatedContainer.innerHTML = '<p style="text-align: center; color: #888;">No related products found.</p>'; //
+        return;
+    }
+
+    relatedProducts.forEach(product => {
+        const productCard = document.createElement('div'); //
+        productCard.classList.add('product-card'); // Giả sử có kiểu product-card
+        productCard.innerHTML = `
+            <a href="product.html?product_id=${product.id}">
+                <img src="${product.image}" alt="${product.name}" />
+                <h3>${product.name}</h3>
+                <p>$${product.price.toFixed(2)}</p>
+            </a>
+        `; //
+        relatedContainer.appendChild(productCard); //
+    });
+}

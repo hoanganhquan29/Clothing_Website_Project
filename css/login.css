@@ -1,74 +1,73 @@
-/* Align with base.css and index.css for consistent spacing and background */
+
 .form-section {
-  padding: 6rem 1rem; /* Increased padding for more vertical space, similar to hero sections */
-  background-color: #f9f9f9; /* Consistent with body background in base.css */
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; /* Consistent font family */
-  display: flex; /* Use flexbox to center content */
+  padding: 6rem 1rem; 
+  background-color: #f9f9f9; 
+  display: flex; 
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px)); /* Adjust min-height to push footer down */
-  /* Note: --header-height and --footer-height would need to be defined in base.css or elsewhere if precise calculation is needed, otherwise, use a general min-height */
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 80px)); 
+  
 }
 
 .form-section .container {
-  max-width: 450px; /* Slightly increased max-width for a more substantial form */
+  max-width: 450px; 
   margin: 0 auto;
   background-color: #fff;
-  padding: 3.5rem 2.5rem; /* Increased padding for more inner space */
+  padding: 3.5rem 2.5rem; 
   border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth, similar to product cards */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); 
   text-align: center;
 }
 
 .form-section h1 {
-  font-size: 2.5rem; /* Larger heading for prominence, closer to hero titles */
-  margin-bottom: 2rem; /* More space below heading */
-  color: #222; /* Consistent dark text color */
-  font-weight: 700; /* Bolder font weight */
-  letter-spacing: 0.5px; /* Slight letter spacing for appeal */
+  font-size: 2.5rem; 
+  margin-bottom: 2rem; 
+  color: #222; 
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem; /* Slightly increased gap for better visual separation */
+  gap: 1.2rem; 
 }
 
 .auth-form input {
-  padding: 1.1rem; /* Slightly more padding for input fields */
-  font-size: 1.05rem; /* Slightly larger font size */
+  padding: 1.1rem; 
+  font-size: 1.05rem; 
   border: 1px solid #ddd;
   border-radius: 12px;
   transition: border 0.3s ease, box-shadow 0.3s ease;
   outline: none;
-  width: 100%; /* Ensure inputs take full width of container */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 .auth-form input:focus {
-  border-color: #ff5e62; /* Accent color from base.css */
-  box-shadow: 0 0 0 4px rgba(255, 94, 98, 0.2); /* Slightly more prominent focus shadow */
+  border-color: #ff5e62; 
+  box-shadow: 0 0 0 4px rgba(255, 94, 98, 0.2); 
 }
 
 .auth-form button {
-  /* Inherit styles from the common button style in base.css for consistency */
-  padding: 1.2rem 2.5rem; /* Adopt padding from base.css buttons */
-  background-color: #ff5e62; /* Accent color from base.css */
+
+  padding: 1.2rem 2.5rem; 
+  background-color: #ff5e62; 
   color: white;
   border: none;
-  border-radius: 30px; /* Consistent border-radius for buttons */
-  font-size: 1.05rem; /* Consistent font size */
+  border-radius: 30px; 
+  font-size: 1.05rem; 
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adopt transitions from base.css */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow */
-  width: 100%; /* Make button full width */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%; 
 }
 
 .auth-form button:hover {
-  background-color: #e64e50; /* Hover color from base.css */
-  transform: translateY(-3px); /* Consistent hover effect */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Consistent hover shadow */
+  background-color: #e64e50; 
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive adjustments for login form, mirroring index.css media queries */

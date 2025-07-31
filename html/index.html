@@ -5,35 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to AQ Threads</title>
   <link rel="stylesheet" href="../css/style-landing-page.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
   <header>
     <div class="nav-container">
       <img class="logo" src="../images/logo2.png" alt="AQ Threads Logo" class="logo" />
-      <div>
-        <a href="#about">About</a>
+      <div class="header-links">
+        <a href="#about">About Us</a>
         <a href="home_page.html">Enter Website</a>
       </div>
     </div>
   </header>
 
-  <div class="landing-hero">
-    <div class="landing-text">
-      <h1>Unleash Your Style</h1>
-      <p style="margin-right: 5px;">Fashion is an instant language. Explore the latest trends, designed to fit your story.</p>
-      <a href="home_page.html">Shop Now</a>
-    </div>
-    <div class="landing-image"></div>
+ <div class="landing-hero">
+  <img class="landing-hero-image" src="../images/landing_page.avif" alt="Fashion Hero" />
+  <div class="landing-text">
+    <h1>Unleash Your Style</h1>
+    <p>Fashion is an instant language. Explore the latest trends, designed to fit your story.</p>
+    <a href="home_page.html" class="shop-now-btn">Shop Now</a>
   </div>
+</div>
 
-  <section id="about">
-    <h2>About AQ Threads</h2>
-    <p>
-      At AQ Threads, we believe in empowering individuality through fashion. From timeless classics to bold statements, our curated collections are crafted to inspire and elevate your everyday look.
-    </p>
-    
+  <section id="about" class="about-section">
+    <div class="about-content">
+        <h2>About AQ Threads</h2>
+        <p>
+          At AQ Threads, we believe in empowering individuality through fashion. From timeless classics to bold statements, our curated collections are crafted to inspire and elevate your everyday look.
+        </p>
+    </div>
   </section>
+
+  <section class="benefits-section">
+    <div class="container">
+      <h2>Why Choose AQ Threads?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-gem icon"></i>
+          <h3>Premium Quality</h3>
+          <p>Carefully selected fabrics and meticulous craftsmanship ensure lasting comfort and style.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-palette icon"></i>
+          <h3>Unique Designs</h3>
+          <p>Stand out from the crowd with our exclusive, trend-setting designs you won't find anywhere else.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-truck icon"></i>
+          <h3>Fast & Free Shipping</h3>
+          <p>Enjoy quick delivery right to your doorstep, with free shipping on all orders.</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-headset icon"></i>
+          <h3>24/7 Customer Support</h3>
+          <p>Our dedicated team is always here to assist you with any queries or concerns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-products-section">
+    <div class="container">
+      <h2>Our Latest Arrivals</h2>
+      <div class="products-grid">
+        </div>
+      <div class="text-center">
+        <a href="home_page.html#products" class="shop-now-btn view-all-btn">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial-item">
+          <p>"Absolutely love my new dress! The quality is amazing and it fits perfectly. Highly recommend AQ Threads!"</p>
+          <h4>- Jane Doe</h4>
+          <span>Fashion Blogger</span>
+        </div>
+        <div class="testimonial-item">
+          <p>"Finally found a store that offers unique and stylish clothing. Fast shipping and great customer service too!"</p>
+          <h4>- John Smith</h4>
+          <span>Satisfied Customer</span>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="newsletter-cta-section">
+    <div class="container">
+      <h2>Join Our Style Community!</h2>
+      <p>Sign up for our newsletter to get the latest updates on new arrivals, exclusive offers, and style tips.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="shop-now-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/script.js"></script> <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
