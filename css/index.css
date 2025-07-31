@@ -113,8 +113,9 @@
 
 
 .product-card img {
-    height: 500px;
-    object-fit: cover;
+    height: 350px;
+    object-fit: contain;
+    display:block;
 }
 
 .product-card h3 {

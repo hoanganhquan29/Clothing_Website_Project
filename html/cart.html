@@ -29,12 +29,66 @@
                 <tbody id="cart-items-body">
                     </tbody>
             </table>
+            
         </div>
 
         <div class="cart-summary">
             <h3>Cart Total: <span id="cart-total">$0.00</span></h3>
             <button id="checkout-btn" class="checkout-button">Proceed to Checkout</button>
         </div>
+    </main>
+
+    <div id="payment-modal" class="payment-modal-overlay">
+        <div class="payment-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Complete Your Order</h2>
+
+            <div class="checkout-summary-in-modal">
+                <h4>Order Summary</h4>
+                <div id="modal-cart-items-summary">
+                    </div>
+                <div class="order-total-in-modal">
+                    <span>Subtotal:</span> <span id="modal-subtotal">$0.00</span><br>
+                    <span>Shipping:</span> <span id="modal-shipping">$5.00</span><br>
+                    <strong>Grand Total: <span id="modal-grand-total">$0.00</span></strong>
+                </div>
+            </div>
+
+            <div class="payment-options">
+                <h3>Choose Payment Method:</h3>
+                <label>
+                    <input type="radio" name="paymentMethod" value="cod" checked> Cash on Delivery (COD)
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="qr"> MoMo / ZaloPay QR
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="card"> Credit/Debit Card (Coming Soon)
+                </label>
+            </div>
+
+            <div id="qr-code-section" class="payment-detail-section" style="display: none;">
+                <h4>Scan QR Code to Pay</h4>
+                <p>Please transfer <span id="qr-amount-display" style="font-weight: bold;">$0.00</span> to complete your order.</p>
+                <img src="../images/qrcode.JPG" alt="QR Code" class="qr-image">
+                
+            </div>
+
+            <div id="cod-section" class="payment-detail-section">
+                <h4>Cash on Delivery</h4>
+                <p>You will pay **<span id="cod-amount-display" style="font-weight: bold;">$0.00</span>** when you receive your order.</p>
+                <p>Please ensure you have the exact amount ready.</p>
+            </div>
+
+            <button id="confirm-order-button" class="shop-now-btn">Confirm Order</button>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/cart.js"></script> </body>
+</html>
     </main>
 
     <div id="footer-placeholder"></div>
